@@ -15,6 +15,8 @@ Visualization: Matplotlib
 
 Environment: Google Colab / Cloud Storage
 
+
+
 🚀 Key Features & Pipeline Architecture
 1. Big Data Ingestion & Preprocessing
 
@@ -26,6 +28,7 @@ Numerical columns (popularity, followers) imputed with 0 to preserve data integr
 
 Structural columns (spotify_id) dropped rows with nulls to ensure valid graph connectivity.
 
+
 2. Network Topology & Graph Sampling
 
 Challenge: Calculating complex metrics (e.g., Betweenness Centrality) on 150k+ nodes is computationally expensive.
@@ -35,6 +38,7 @@ Solution (BFS Sampling): Instead of random sampling (which destroys community st
 
 
 Validation: Verified the sample's validity by comparing its degree distribution to the full graph, confirming both followed a Power Law distribution.
+
 
 3. Centrality Measures & Analysis
 Calculated five key centrality measures to identify network "influencers":
@@ -47,12 +51,14 @@ Betweenness Centrality: Identification of "bridge" artists connecting genres.
 PageRank: Algorithmic ranking of artist influence.
 
 
+
 4. Machine Learning & Predictive Modeling
 Linear Regression (Predicting Popularity):
 
 Features: Followers + Centrality Measures.
 
 Result: Identification that Betweenness Centrality is a significant predictor of popularity, highlighting the importance of being a "bridge" in the music industry.
+
 
 
 
@@ -64,6 +70,9 @@ Evaluated K=2 to K=10; determined K=2 as optimal with a Silhouette Score of 0.99
 
 
 Insight: The network is sharply divided into "Superstars" (hub nodes) and the "General Population".
+
+
+
 
 📊 Key Findings
 
